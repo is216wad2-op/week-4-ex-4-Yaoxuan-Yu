@@ -23,24 +23,24 @@
          var input = document.getElementById("userinput");
          var enterButton = document.getElementById("enter");
        
-         // Function to create a delete button for a given li
-         // function createDeleteButton(li){
+         Function to create a delete button for a given li
+         function createDeleteButton(li){
 
-         //    var deleteBtn = document.createElement("button");
+            var deleteBtn = document.createElement("button");
             
-         //    deleteBtn.textContent = "Delete" // value of button
+            deleteBtn.textContent = "Delete" // value of button
             
-         //    // add click event to remove the li
-         //    deleteBtn.onclick = function() {
+            // add click event to remove the li
+            deleteBtn.onclick = function() {
 
-         //       ul.removeChild(li); // why does the function know ul?
+               ul.removeChild(li); // why does the function know ul?
 
-         //    }
+            }
 
-         //    // append delete button
-         //    li.appendChild(deleteBtn);
+            // append delete button
+            li.appendChild(deleteBtn);
 
-         // }
+         }
 
          // // Add delete button to existing items
          // var existingItems = ul.getElementsByTagName("li"); // get li from ul
