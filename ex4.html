@@ -18,18 +18,60 @@
       </ul>
       
       <script>
-      
-         function addListAfterClick() {
-            var ul = document.getElementsByTagName("ul")[0];
-            var li = document.createElement("li");
-            var input = document.getElementById("userinput");
-            // add new item only if the user has entered something
-            if (input.value.length > 0) {
-               var textNode = document.createTextNode(input.value);
-               li.appendChild(textNode);
-               ul.appendChild(li);
-               input.value = "";
+         // Global references
+         var ul = document.getElementsByTagName("ul")[0]; 
+         
+         var input = document.getElementById("userinput");
+         
+         var enterButton = document.getElementById("enter");
+       
+         // Function to create a delete button for a given li
+         function createDeleteButton(li){
+
+            var deleteBtn = document.createElement("button");
+            
+            deleteBtn.textContent = "Delete" // value of button
+
+            // add click event to remove the li
+            deleteBtn.onclick = function() {
+
+               ul.removeChild(li); // why does the function know ul?
+
             }
+
+            // append delete button
+            li.appendChild(deleteBtn);
+
+         }
+
+         // Add delete button to existing items
+         var existingItems = ul.getElementsByTagName("li"); // get li from ul
+
+         for (var i = 0; i < existingItems.length ; i++){
+
+            createDeleteButton(existingItems[i]);
+
+         }
+
+         // Function to add new items
+         function addListAfterClick() {
+
+            // if the user has entered something
+            if (input.value.length > 0) {
+               
+               var li = document.createElement("li"); // get li
+
+               var textNode = document.createTextNode(input.value); // create node for input value
+
+               li.appendChild(textNode);
+               
+               createDeleteButton(li); // create & append a delete button
+               
+               ul.appendChild(li); // append li to ul
+
+               input.value = ""; // clear input
+            }
+
             // following alternative code also works but is unsafe
             // try entering the input <h2>abcd</h2>
             // var input = document.getElementById("userinput");
