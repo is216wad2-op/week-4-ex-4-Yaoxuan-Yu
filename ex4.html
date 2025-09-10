@@ -7,7 +7,6 @@
       <h1>Shopping List</h1>
       <p>Get it done today</p>
       <input id="userinput"  type="text" placeholder="enter items">
-      <button id="enter" onclick="addListAfterClick()">Enter</button>
       <ul id="myul">
          <li>Notebook</li>
          <li>Jello</li>
@@ -59,7 +58,7 @@
                
                var li = document.createElement("li"); // get li
 
-               var textNode = document.createTextNode(input.value + " "); // create node for input value
+               var textNode = document.createTextNode(input.value); // create node for input value
 
                li.appendChild(textNode);
                
