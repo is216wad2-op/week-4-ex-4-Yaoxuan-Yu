@@ -19,10 +19,8 @@
       
       <script>
          // Global references
-         var ul = document.getElementByID("myul"); 
-         
+         var ul = document.getElementById("myul"); 
          var input = document.getElementById("userinput");
-         
          var enterButton = document.getElementById("enter");
        
          // Function to create a delete button for a given li
@@ -31,7 +29,7 @@
             var deleteBtn = document.createElement("button");
             
             deleteBtn.textContent = "Delete" // value of button
-
+            
             // add click event to remove the li
             deleteBtn.onclick = function() {
 
@@ -78,6 +76,13 @@
             // var ul = document.getElementsByTagName("ul")[0];
             // ul.innerHTML += input.value
          }
+
+         // optional: allow Enter key to add items
+         input.addEventListener("keypress", function(event){
+               if(event.key === "Enter") {
+                  addListAfterClick();
+               }
+         });
 
       </script>
  
