@@ -8,7 +8,7 @@
       <p>Get it done today</p>
       <input id="userinput"  type="text" placeholder="enter items">
       <button id="enter" onclick="addListAfterClick()">Enter</button>
-      <ul>
+      <ul id="myul">
          <li>Notebook</li>
          <li>Jello</li>
          <li>Spinach</li>
@@ -19,7 +19,7 @@
       
       <script>
          // Global references
-         var ul = document.getElementsByTagName("ul")[0]; 
+         var ul = document.getElementByID("myul"); 
          
          var input = document.getElementById("userinput");
          
